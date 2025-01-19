@@ -1,0 +1,15 @@
+import speech-recognition as sr
+import pyttsx3
+r=sr.recognizer()
+def speaktext(command):
+  engine = pyttsx3.init()
+  engine.say(command)
+  engine.runAndWait()
+with sr.microphone as source2():
+  r.adjust_for_ambient_noise(source2 ,duration=0.2)
+  audio2 = r.listen(source2)
+  mytext = r.recognise_google(audio2)
+  mytext = mytext.lower()
+  print("i say" +mytext
+speaktext(mytext)
+  
